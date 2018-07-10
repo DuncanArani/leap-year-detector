@@ -1,15 +1,23 @@
-$(document).ready(function(){
-  $("form#leap-year").submit(function(event){
+$(document).ready(function() {
+  $("form#leap-year").submit(function(event) {
     event.preventDefault();
-    var year=parseInt($("input#year").val());
+    var year = parseInt($("input#year").val());
     // console.log(year);
-    var result=leapYear(year);
+    var result = leapYear(year);
     $("#result").text(result);
 
 
   });
 });
-var leapYear=function(year){
-  return false;
+var leapYear = function(year) {
+
+  if (year % 100 === 0) {;
+    return false;
+  } else if (year % 4 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+
 
 };
